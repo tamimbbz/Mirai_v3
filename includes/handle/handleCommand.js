@@ -133,19 +133,24 @@ if (!command && !prefixUsed) return;
 
     // ===== Permission Check =====
     let permssion = 0;
-    const threadInfoo = threadInfo.get(threadID) || (await Threads.getInfo(threadID));
-    const find = threadInfoo.adminIDs.find((el) => el.id == senderID);
+    const threadInfoo =
+    threadInfo.get(threadID) || (await Threads.getInfo(threadID));
+    const find = threadInfoo.adminIDs.find(el => el.id == senderID);
 
     if (NDH.includes(senderID)) permssion = 2;
     else if (ADMINBOT.includes(senderID)) permssion = 3;
     else if (find) permssion = 1;
 
+   // ❗ permission not enough → system message call made by rX
     if (command.config.hasPermssion > permssion) {
-      const nameUser = await Users.getNameUser(senderID);
       return api.sendMessage(
-        `⚠️ ${nameUser} does not have enough permission to use ${command.config.name}`,
-        threadID,
-        messageID
+       global.getText(
+        "handleCommand",
+        "permissionNotEnough",
+        command.config.name
+       ),
+       threadID,
+       messageID
       );
     }
 
