@@ -5,7 +5,7 @@ module.exports.config = {
   name: "help",
   version: "4.3.0",
   hasPermssion: 0,
-  credits: "rX Abdullah",
+  credits: "rX",
   usePrefix: true,
   description: "Paged help menu 2 pages + random GIF attached both pages, auto unsend 15s",
   commandCategory: "system",
@@ -94,9 +94,9 @@ module.exports.run = async function ({ api, event, args }) {
     msg += `╰‣ 𝐓𝐲𝐩𝐞 !help2 𝐭𝐨 𝐬𝐞𝐞 𝐧𝐞𝐱𝐭 𝐩𝐚𝐠𝐞\n`;
     // Attach random GIF for both pages
     let attachment = null;
-    const cache = path.join(__dirname, "cache");
+    const cache = path.join(__dirname, "noprefix");
     if (fs.existsSync(cache)) {
-      const names = ["mariav3", "mariav4", "mariav5"];
+      const names = ["abdullah1", "abdullah2", "abdullah3"];
       const exts = [".gif", ".mp4", ".webp", ".png", ".jpg"];
       let found = [];
 
