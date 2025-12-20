@@ -48,7 +48,7 @@ module.exports.run = async function ({ api, event, args, Users, permssion, getTe
 	const axios = require("axios");
 	const moment = require("moment-timezone");
 
-	const timeNow = moment.tz("Asia/Ho_Chi_Minh").format("DD/MM/YYYY - HH:mm:ss");
+	const timeNow = moment.tz("Asia/Dhaka").format("DD/MM/YYYY - HH:mm:ss");
 	const senderName = await Users.getNameUser(event.senderID);
 
 	const { PREFIX } = global.config;
