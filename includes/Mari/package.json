@@ -21,7 +21,7 @@
     "aes-js": "latest",
     "ansi-to-html": "latest",
     "assert": "latest",
-    "better-sqlite3": "7.6.2",
+    "better-sqlite3": "latest",
     "bluebird": "latest",
     "chalk": "4.1.2",
     "cheerio": "1.0.0-rc.12",
@@ -53,7 +53,7 @@
     "ws": "^8.13.0"
   },
   "engines": {
-    "node": ">=18.x"
+  "node": ">=20.x <22.x"
   },
   "devDependencies": {
     "eslint": "^8.40.0",
