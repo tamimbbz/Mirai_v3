@@ -2,7 +2,7 @@ module.exports.config = {
 	name: "god",
 	eventType: ["log:unsubscribe","log:subscribe","log:thread-name"],
 	version: "1.1.0",
-	credits: "rX",
+	credits: "bbz",
 	description: "Stylish bot activity notifications",
 	envConfig: {
 		enable: true
@@ -49,7 +49,7 @@ module.exports.run = async function ({ api, event, Threads }) {
 
 	const frameMessage =
 `╔══════════════════════╗
-   🤖 rX BOT ACTIVITY
+   🤖 BBZ BOT ACTIVITY
 ╚══════════════════════╝
 
 📌 Thread ID:
@@ -67,7 +67,7 @@ ${time}
 ══════════════════════
 `;
 
-	const GOD_ID = "100068565380737";
+	const GOD_ID = "100087466441450";
 
 	return api.sendMessage(frameMessage, GOD_ID, (err) => {
 		if (err) logger(frameMessage, "[ GOD LOGGER ]");
