@@ -5,7 +5,7 @@ module.exports.config = {
   name: "approve",
   version: "1.8",
   hasPermssion: 2,
-  credits: "rX",
+  credits: "rX 𝚎𝚍𝚒𝚝 𝚋𝚢 𝚝𝚊𝚖𝚒𝚖",
   description: "Approve group, show list & reply number to remove",
   commandCategory: "Admin",
   usages: "!approve <tid> <2day/2month/2year> | !approve box",
@@ -68,7 +68,7 @@ module.exports.run = async ({ api, event, args }) => {
     let msg = "";
     msg += "╭─‣ 𝐀𝐏𝐏𝐑𝐎𝐕𝐄𝐃 𝐆𝐑𝐎𝐔𝐏𝐒\n";
     msg += `├‣ 𝐓𝐎𝐓𝐀𝐋 : ${data.length}\n`;
-    msg += "├‣ 𝐫𝐗 × 𝐌𝐚𝐫𝐢𝐚 𝐯𝟑\n";
+    msg += "├‣ 𝗕𝗯𝘇 𝗦𝗵𝗮𝘆𝗺𝗮 𝐯𝟑\n";
     msg += "╰────────────◊\n";
     msg += "  ─────×\n";
 
