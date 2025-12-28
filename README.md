@@ -6,7 +6,7 @@
 <a href="https://github.com/rxmaria761"><img alt="MARIA BOT Github Stats"
     src="https://github-readme-stats.vercel.app/api?username=rxmaria761&show_icons=true&count_private=true&theme=react&bg_color=151515" /></a>
 <p align="center"><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=rxmaria761&theme=black-ice"
-    alt="rX Abdullah"/></p>
+    alt="Tamim Bbz"/></p>
 
 <br/>
 
@@ -17,10 +17,10 @@
         <img src="https://i.imgur.com/I0kvVfu.jpeg" alt="Logo">
     </a>
 
-<h3 align="center">MARIA CHATBOT</h3>
+<h3 align="center">SHAYMA CHATBOT</h3>
 
 <p align="center">
-    A simple Facebook Messenger Bot made by me (rX Abdullah).
+    A simple Facebook Messenger Bot made by me (Tamim Bbz).
     <br />
     <br />
     <a href="https://github.com/rxabdullah007/Maria-v3/issues">Report Bug</a>
@@ -107,10 +107,10 @@ node index.js
 - You can use available commands like:
 
 ```
-!help
-!up
-!song [name]
-!info
+/help
+/up
+/song [name]
+/info
 
 ```
 # No Prefix system for admins
@@ -137,12 +137,7 @@ info
 
 ## 👨‍💻 Owner Info
 
-**Name:** RX Abdullah  
-**Age:** 17+  
-**Class:** Intermediate  
-**Lives in:** Mohammadpur, Dhaka  
-**Born in:** Rajshahi  
-**Hobbies:** Coding, Riding Bikes  
+**Name:** RX Abdul**Name:** 𝗧𝗮𝗺𝗶𝗺 𝗕𝗯𝘇  e𝗖𝗹𝗮𝘀𝘀 : 𝗶𝗻𝘁𝗲𝗿 2𝗻𝗱 𝘆𝗲𝗮𝗿a**Lives in:**𝗖𝗼𝗺𝗶𝗹𝗹𝗮, 𝗕𝗮𝗻𝗴𝗮𝗱𝗲𝘀𝗵ng, Riding Bikes  
 **Fav Bike:** KTM RC
 
 ---
@@ -160,10 +155,4 @@ info
 
 ## ✨ OWNAR PHOTO
 
-![Preview](https://i.postimg.cc/nhxxB67n/IMG-0793.jpg)
-
----
-
-## 💬 Thanks for visiting!
-
-Made with 💚 by **RX Abdullah**
+![Preview](https:/![Preview]("https://i.imgur.com/jSkM1dq.jpeg",![Preview](https://i.postimg.cc/nhanks for visiting!**RX Abdullah**
