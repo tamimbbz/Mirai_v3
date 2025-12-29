@@ -4,7 +4,7 @@ module.exports.config = {
  name: "flux",
  version: "2.0",
  hasPermssion: 0,
- credits: "Dipto",
+ credits: "Dipto | Tamim bbz",
  description: "Flux Image Generator",
  commandCategory: "𝗜𝗠𝗔𝗚𝗘 𝗚𝗘𝗡𝗘𝗥𝗔𝗧𝗢𝗥",
  usage: "{pn} [prompt] --ratio 1024x1024\n{pn} [prompt]",
@@ -22,8 +22,7 @@ module.exports.run = async ({ event, args, api }) => {
 
  const startTime = Date.now();
 
- const waitMessage = await api.sendMessage("Generating image, please wait... 😘", event.threadID);
- api.setMessageReaction("⌛", event.messageID, () => {}, true);
+ const waitMessage = await api.sendMessage(essage("𝗚𝗲𝗻𝗲𝘁𝗮𝘁𝗶𝗻𝗴 𝗶𝗺𝗮𝗴𝗲, 𝗽𝗹𝗲𝗮𝘀𝗲 𝘄𝗮𝗶𝘁essage("𝗚 𝗶𝗺𝗮𝗴 api.setMessageReaction("⌛", event.messageID, () => {}, true);
 
  const apiurl = `${dipto}/flux?prompt=${encodeURIComponent(prompt2)}&ratio=${encodeURIComponent(ratio)}`;
  const response = await axios.get(apiurl, { responseType: "stream" });
