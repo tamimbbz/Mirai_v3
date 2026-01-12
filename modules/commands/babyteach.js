@@ -20,7 +20,7 @@ module.exports.config = {
   name: "babyteach",
   version: "7.0.0",
   hasPermssion: 0,
-  credits: "rX Abdullah",
+  credits: "rX | 𝗺𝗼𝗱𝗶𝗳𝘆 𝗯𝘆 𝗯𝗯𝘇",
   description: "Teach, reply & delete system via mentionapi API only (mention user + multiple replies + list commands)",
   commandCategory: "noprefix",
   usages: "!teach <trigger> - <reply>, !delteach <trigger>, !teach list, !teach msg <trigger>",
@@ -102,7 +102,7 @@ module.exports.run = async function ({ api, event, args }) {
 
     // ===== Normal teach: trigger - reply =====
     const parts = content.split(" - ");
-    if (parts.length < 2) return api.sendMessage("❌ Format: !teach <trigger> - <reply>", threadID, messageID);
+    if (parts.length < 2) return api.sendMessage("❌ Format: /teach <trigger> - <reply>", threadID, messageID);
 
     const trigger = parts[0].trim();
     const reply = parts[1].trim();
