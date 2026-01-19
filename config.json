@@ -15,8 +15,8 @@
     "ACCESSTOKEN": "",
     "FACEBOOK_ADMIN": "",
     "ZALO_ADMIN": "",
-    "ADMIN_NAME": "Tamim Bbz",
-    "BOTNAME": "তোমাগো লাং v3 倫",
+    "ADMIN_NAME": "𝗧𝗮𝗺𝗶𝗺 𝗕𝗯𝘇",
+    "BOTNAME": "𝗕𝗯𝘇 𝗖𝗵𝗮𝘁 𝗕𝗼𝘁 ✔︎",
     "PREFIX": "/",
     "ADMINBOT": [
         "100087466441450",
@@ -70,7 +70,7 @@
     "version": "4.6.9",
     "iconUnsend": {
         "status": true,
-        "icon": "😡"
+        "icon": "😡" ,"😾"
     },
     "FCAOption": {
         "forceLogin": true,
