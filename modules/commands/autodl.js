@@ -5,10 +5,10 @@ const { alldown } = require("rx-dawonload");
 
 module.exports.config = {
     name: "autodl",
-    version: "2.1.1",
+    version: "2.2.0",
     credits: "rX | 𝗺𝗼𝗱𝗶𝗳𝘆 𝗯𝘆 𝗯𝗯𝘇",
     hasPermission: 0,
-    description: "Auto detect any link and ask for download confirm",
+    description: "Auto download any supported link",
     usePrefix: false,
     commandCategory: "utility",
     usages: "",
@@ -18,61 +18,27 @@ module.exports.config = {
 module.exports.run = async function () {};
 
 // -------------------------
-// 🔥 Auto Detect Link
+// 🔥 Auto Detect + Auto Download
 // -------------------------
 module.exports.handleEvent = async function ({ api, event }) {
-    const content = event.body ? event.body.trim() : "";
-    if (!content.startsWith("http")) return;
-
-    // Detect Platform
-    let site = "Unknown";
-    if (content.includes("youtube.com") || content.includes("youtu.be")) site = "YouTube";
-    else if (content.includes("tiktok.com")) site = "TikTok";
-    else if (content.includes("instagram.com")) site = "Instagram";
-    else if (content.includes("facebook.com")) site = "Facebook";
-
-    // Ask for confirmation
-    api.sendMessage(
-        `🔍 Platform detected: ${site}\n\n}\n\n❮ React ❤️ this message to start downloa,
-        event.threadID,
-        (err, info) => {
-            if (err) return;
-
-            // Register Reaction Listener
-            global.client.handleReaction = global.client.handleReaction || [];
-            global.client.handleReaction.push({
-                type: "autodl_confirm",
-                name: module.exports.config.name,
-                messageID: info.messageID,
-                author: event.senderID,
-                url: content,
-                site
-            });
-        }
-    );
-};
-
-// -------------------------
-// ❤️ Reaction Handler
-// -------------------------
-module.exports.handleReaction = async function ({ api, event, handleReaction }) {
     try {
-        if (handleReaction.type !== "autodl_confirm") return;
+        const content = event.body ? event.body.trim() : "";
+        if (!content.startsWith("http")) return;
 
-        // Anyone can react now
-        const reaction = event.reaction;
-        if (reaction !== "❤") return;
+        // Detect Platform
+        let site = "Unknown";
+        if (content.includes("youtube.com") || content.includes("youtu.be")) site = "YouTube";
+        else if (content.includes("tiktok.com")) site = "TikTok";
+        else if (content.includes("instagram.com")) site = "Instagram";
+        else if (content.includes("facebook.com")) site = "Facebook";
 
-        // Edit confirmation message to show downloading
-        api.editMessage(`⬇️ 𝗗𝗼𝘄𝗻𝗹𝗼𝗱𝗶𝗻𝗴 𝗽𝗹𝘇 𝘄𝗮𝘁𝗲...`, handleReaction.messageID);
-
-        const videoURL = handleReaction.url;
-        const site = handleReaction.site;
+        // Show downloading message
+        const msg = await api.sendMessage("⬇️ Downloading...", event.threadID);
 
         // Download using alldown
-        const data = await alldown(videoURL);
+        const data = await alldown(content);
         if (!data || !data.url) {
-            api.sendMessage(`❌ 𝗙𝗮𝗶𝗹𝗱𝗲 𝘁𝗼 𝗳𝗮𝘁𝗰𝗵 𝗱𝗼𝘄𝗻𝗹𝗼𝗮𝗿𝗱 𝗹𝗶𝗻𝗸!`, event.threadID);
+            api.sendMessage("❌ Failed to fetch download link!", event.threadID);
             return;
         }
 
@@ -85,22 +51,21 @@ module.exports.handleReaction = async function ({ api, event, handleReaction }) 
         const filePath = path.join(__dirname, "cache", `${safeTitle}.mp4`);
         fs.writeFileSync(filePath, buffer);
 
-        // Send downloaded file
+        // Send video
         api.sendMessage(
             {
-                body: `🎀 𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗿𝗱 𝗖𝗼𝗺𝗽𝗹𝗶𝗰𝘁𝗲!\n📍 𝗣𝗹𝗮𝘁𝗳𝗿𝗼𝗺: ${site}\n🎬 𝗧𝗶𝘁𝗹𝗲: ${title}`,
+                body: `🎀 𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗿𝗱 𝗖𝗼𝗺𝗽𝗹𝗲𝘁𝗲!\n📍 Platform: ${site}\n🎬 Title: ${title}`,
                 attachment: fs.createReadStream(filePath)
             },
             event.threadID,
             () => {
                 fs.unlinkSync(filePath);
-                // Remove the "Downloading" message
-                api.unsendMessage(handleReaction.messageID);
+                api.unsendMessage(msg.messageID);
             }
         );
 
     } catch (e) {
-        console.log("autodl reaction error:", e);
+        console.log("autodl error:", e);
         api.sendMessage("❌ Download failed!", event.threadID);
     }
 };
