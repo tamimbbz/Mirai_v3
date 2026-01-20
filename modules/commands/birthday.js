@@ -2,7 +2,7 @@ module.exports.config = {
   name: "birthday",
   version: "1.0.0",
   hasPermssion: 0,
-  credits: "ChatGPT for rX Abdullah",
+  credits: "𝗯𝗯𝘇",
   description: "Shows birthday countdown or wishes",
   usePrefix: true,
   commandCategory: "info",
@@ -44,8 +44,8 @@ module.exports.run = async ({ api, event }) => {
   };
 
   if (days === 0 && hours === 0 && minutes === 0 && seconds <= 59) {
-    return send(`🎉 আজ rX Abdullah এর জন্মদিন!\nসবাই উইশ করো 🥳💙\n📅 26 সেপ্টেম্বর, 2007 🎂${link}`);
+    return send(`🎉 আজ 𝗧𝗮𝗺𝗶𝗺 𝗕𝗯𝘇এর জন্মদিন!\nসবাই উইশ করো 🥳💙\n📅 04 𝗔𝗣𝗥𝗜𝗟, 2006 🎂${link}`);
   }
 
-  return send(`📅 rX Abdullah এর জন্মদিন আসতে বাকি:\n\n⏳ ${days} দিন\n🕒 ${hours} ঘণ্টা\n🕑 ${minutes} মিনিট\n⏱️ ${seconds} সেকেন্ড${link}`);
+  return send(`📅 𝗧𝗮𝗺𝗶𝗺 𝗕𝗯𝘇 এর জন্মদিন আসতে বাকি:\n\n⏳ ${days} দিন\n🕒 ${hours} ঘণ্টা\n🕑 ${minutes} মিনিট\n⏱️ ${seconds} সেকেন্ড${link}`);
 };
